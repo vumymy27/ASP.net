@@ -10,7 +10,7 @@ namespace Example01.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        qlbhEntities objqlbhEntities = new qlbhEntities();
+        objqlbhEntities objqlbhEntities = new objqlbhEntities();
         public ActionResult Detail(int Id)
         {
 

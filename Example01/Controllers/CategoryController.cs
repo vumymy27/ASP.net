@@ -9,7 +9,7 @@ namespace Example01.Controllers
 {
     public class CategoryController : Controller
     {
-        qlbhEntities objqlbhEntities = new qlbhEntities();
+        objqlbhEntities objqlbhEntities = new objqlbhEntities();
 
         // GET: Category
         public ActionResult Index()

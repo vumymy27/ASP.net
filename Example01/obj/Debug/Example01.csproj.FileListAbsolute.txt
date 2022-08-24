@@ -81,3 +81,7 @@ D:\ASP\Example01\Example01\bin\EntityFramework.dll
 D:\ASP\Example01\Example01\bin\EntityFramework.SqlServer.dll
 D:\ASP\Example01\Example01\bin\EntityFramework.xml
 D:\ASP\Example01\Example01\bin\EntityFramework.SqlServer.xml
+D:\ASP\Example01\Example01\bin\PagedList.dll
+D:\ASP\Example01\Example01\bin\PagedList.Mvc.dll
+D:\ASP\Example01\Example01\bin\PagedList.xml
+D:\ASP\Example01\Example01\bin\PagedList.Mvc.xml

@@ -1,0 +1,63 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Example01.Context.Category>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "Category", FormMethod.Get))
+{
+    <p>
+        Tìm tên sản phẩm:@Html.TextBox("SearchString", ViewBag.CurreniFilter as string)
+        <input type="submit" value="Tìm kiếm" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Avatar)
+
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ShowOnHomePage)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <img src="~/Content/images/items/@item.Avatar" style="width:100px;height:100px" />
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowOnHomePage)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    Trang @(Model.PageCount < Model.PageNumber ? 0: Model.PageNumber) / @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))
+</div>

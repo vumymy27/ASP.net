@@ -31,7 +31,6 @@ namespace Example01.Context
         public Nullable<int> DisplayOrder { get; set; }
         public Nullable<System.DateTime> CreatedOnUtc { get; set; }
         public Nullable<System.DateTime> UpdatedOnUtc { get; set; }
-        [NotMapped]
-        public System.Web.HttpPostedFileBase ImageUpload { get; set; }
+       
     }
 }

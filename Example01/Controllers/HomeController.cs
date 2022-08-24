@@ -12,7 +12,7 @@ namespace Example01.Controllers
 {
     public class HomeController : Controller
     {
-        qlbhEntities objqlbhEntities = new qlbhEntities();
+        objqlbhEntities objqlbhEntities = new objqlbhEntities();
         public ActionResult Index()
 
         {

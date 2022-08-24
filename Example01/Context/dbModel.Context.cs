@@ -13,9 +13,9 @@ namespace Example01.Context
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class qlbhEntities : DbContext
+    public partial class objqlbhEntities : DbContext
     {
-        public qlbhEntities()
+        public objqlbhEntities()
             : base("name=qlbhEntities")
         {
         }
