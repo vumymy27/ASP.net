@@ -36,7 +36,6 @@ namespace Example01.Models
         [Required(ErrorMessage = "Giá không được để trống")]
         public Nullable<double> Price { get; set; }
         [Display(Name = "Giá khuyến mãi")]
-        [Required(ErrorMessage = "Giá khuyến mãi không được để trống")]
 
         public Nullable<double> PriceDiscount { get; set; }
         public string Slug { get; set; }

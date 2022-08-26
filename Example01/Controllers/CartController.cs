@@ -16,7 +16,8 @@ namespace Example01.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            return View();
+           return View((List<CartModel>)Session["cart"]);
+           
         }
         public ActionResult AddToCart(int id, int quantity)
         {
@@ -56,6 +57,15 @@ namespace Example01.Controllers
                 if (cart[i].Product.Id.Equals(id))
                     return i;
             return -1;
+        }
+        //xóa sản phẩm khỏi giỏ hàng theo id
+        public ActionResult Remove(int Id)
+        {
+            List<CartModel> li = (List<CartModel>)Session["cart"];
+            li.RemoveAll(x => x.Product.Id == Id);
+            Session["cart"] = li;
+            Session["count"] = Convert.ToInt32(Session["count"]) - 1;
+            return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
         }
     }
 }

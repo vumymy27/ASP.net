@@ -1,6 +1,6 @@
 ﻿using Example01.Context;
 
-namespace Example01.Controllers
+namespace Example01.Models
 {
     public class CartModel
     {

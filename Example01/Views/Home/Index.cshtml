@@ -113,7 +113,7 @@
                                 <img src="~/Content/images/items/@item.Avatar">
                             </a>
                             <div class="text-wrap p-3">
-                                <a href="#" class="title">@item.Name</a>
+                                <a href="@Url.Action("Detail", "Product", new {Id=item.Id})" class="title">@item.Name</a>
                                 <span class="badge badge-danger"> -20% </span>
                             </div>
                         </figure>
@@ -129,7 +129,7 @@
     <!-- =============== SECTION 1 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">Apple</h4>
+            <h4 class="title-section text-uppercase">Laforce</h4>
         </header>
 
         <div class="card card-home-category">
@@ -146,7 +146,7 @@
                 </div> <!-- col.// -->
                 <div class="col-md-9">
                     <ul class="row no-gutters bordered-cols">
-                        @foreach (var item in Model.ListProduct.Where(n=>n.BrandId==1))
+                        @foreach (var item in Model.ListProduct.Where(n=>n.BrandId==7))
                         {
                             <li class="col-6 col-lg-3 col-md-4">
                                 <a href="@Url.Action("Detail", "Product", new {Id=item.Id})" class="item">
@@ -169,7 +169,7 @@
     <!-- =============== SECTION 2 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">Samsung</h4>
+            <h4 class="title-section text-uppercase">Ecco</h4>
         </header>
 
         <div class="card card-home-category">
@@ -186,7 +186,7 @@
                 </div> <!-- col.// -->
                 <div class="col-md-9">
                     <ul class="row no-gutters bordered-cols">
-                        @foreach (var item in Model.ListProduct.Where(n => n.BrandId == 2))
+                        @foreach (var item in Model.ListProduct.Where(n => n.BrandId == 8))
                         {
                             <li class="col-6 col-lg-3 col-md-4">
                                 <a href="@Url.Action("Detail", "Product", new {Id=item.Id})" class="item">

@@ -22,7 +22,7 @@
 
     <!-- Font awesome 5 -->
     <link href="fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
-
+    <link href="~/fonts/fontawesome/css/all.min.css" rel="stylesheet" />
     <!-- custom style -->
     <link href="~/Content/css/ui.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/css/responsive.css" rel="stylesheet" type="text/css" />
@@ -111,7 +111,16 @@
                                 <a href="@Url.Action("Index","Cart")" class="widget-view">
                                     <div class="icon-area">
                                         <i class="fa fa-shopping-cart"></i>
-                                        <span class="notify"id="CartCount" >@Session["count"]</span>
+                                        @if (@Session["count"] == null)
+                                        {
+
+                                        <span class="notify"id="CartCount" >0</span>
+                                        }
+                                        else
+                                        {
+                                       <span class="notify"id="CartCount" >@Session["count"]</span>
+
+                                        }
                                     </div>
                                     <small class="text"> Cart </small>
                                 </a>

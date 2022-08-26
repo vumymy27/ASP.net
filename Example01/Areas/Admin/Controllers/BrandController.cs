@@ -1,4 +1,5 @@
 ﻿using Example01.Context;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,10 +16,30 @@ namespace Example01.Areas.Admin.Controllers
         objqlbhEntities objqlbhEntities = new objqlbhEntities();
 
         // GET: Admin/Brand
-        public ActionResult Index()
+        public ActionResult Index(string currentFilter, string SearchString, int? page)
         {
-            var lstBrand = objqlbhEntities.Brands.ToList();
-            return View(lstBrand);
+            var lstBand = new List<Brand>();
+            if (SearchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                SearchString = currentFilter;
+            }
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                lstBand = objqlbhEntities.Brands.Where(n => n.Name.Contains(SearchString)).ToList();
+            }
+            else
+            {
+                lstBand = objqlbhEntities.Brands.ToList();
+            }
+            ViewBag.CurrentFilter = SearchString;
+            int pageSize = 4;
+            int pageNumber = (page ?? 1);
+            lstBand = lstBand.OrderByDescending(n => n.Id).ToList();
+            return View(lstBand.ToPagedList(pageNumber, pageSize));
         }
         [HttpGet]
         public ActionResult Create()

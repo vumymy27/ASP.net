@@ -4,11 +4,11 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Xóa sản phẩm</h2>
+@*<h2>Xóa sản phẩm</h2>*@
 
 <h3 class="text-danger">Bạn có muốn xóa không?</h3>
 <div>
-    <h4>Sản phẩm</h4>
+    @*<h4>Sản phẩm</h4>*@
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -138,8 +138,8 @@
         @Html.AntiForgeryToken()
 
     <div class="form-actions no-color">
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <input type="submit" value="Xóa" class="btn btn-default" /> |
+        @Html.ActionLink("Trở về", "Index")
     </div>
     }
 </div>
