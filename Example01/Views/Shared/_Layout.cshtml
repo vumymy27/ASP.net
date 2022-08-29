@@ -48,19 +48,12 @@
                         </a> <!-- brand-wrap.// -->
                     </div>
                     <div class="col-xl-6 col-lg-5 col-md-6">
-                        <form action="#" class="search-header">
+                        <form action="@Url.Action("Search","Home")" class="search-header" name="timkiem">
                             <div class="input-group w-100">
-                                <select class="custom-select border-right" name="category_name">
-                                    <option value="">All type</option>
-                                    <option value="codex">Special</option>
-                                    <option value="comments">Only best</option>
-                                    <option value="content">Latest</option>
-                                </select>
-                                <input type="text" class="form-control" placeholder="Search">
-
+                                <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm" name="key">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
-                                        <i class="fa fa-search"></i> Search
+                                        <i class="fa fa-search"></i> Tìm kiếm
                                     </button>
                                 </div>
                             </div>
@@ -75,36 +68,35 @@
                                         <span class="notify">3</span>
                                     </div>
 
-                                     @if(Session["idUser"]!=null)
-                                        {
-                                            <a href="~/Admin/Home/Index">Trang Admin</a>
-                                            <a href="~/Home/Logout">Logout</a>
-                                        }else
-                                        {
-                                            <a href="~/Home/Login">Login</a>
-                                        }
+                                    @if (Session["idUser"] != null)
+                                    {
+                        <a href="~/Admin/Home/Index">Trang Admin</a>
+                                        <a href="~/Home/Logout">Đăng xuất</a> }
+                                                    else
+                                                    {
+                                        <a href="~/Home/Login">Đăng nhập</a>}
                                     @*<small class="text">
 
-                                    <a href="@Url.Action("Register", "Home")"> Đăng ký</a>
+                        <a href="@Url.Action("Register", "Home")"> Đăng ký</a>
 
-                                     </small>*@
+                         </small>*@
                                 </a>
                             </div>
-                            <div class="widget-header mr-3">
-                                <a href="#" class="widget-view">
-                                    <div class="icon-area">
-                                        <i class="fa fa-comment-dots"></i>
-                                        <span class="notify">1</span>
-                                    </div>
-                                    <small class="text"> Message </small>
-                                </a>
-                            </div>
+                            @*<div class="widget-header mr-3">
+                    <a href="#" class="widget-view">
+                        <div class="icon-area">
+                            <i class="fa fa-comment-dots"></i>
+                            <span class="notify">1</span>
+                        </div>
+                        <small class="text"> Message </small>
+                    </a>
+                </div>*@
                             <div class="widget-header mr-3">
                                 <a href="#" class="widget-view">
                                     <div class="icon-area">
                                         <i class="fa fa-store"></i>
                                     </div>
-                                    <small class="text"> Orders </small>
+                                    <small class="text"> Đon hàng </small>
                                 </a>
                             </div>
                             <div class="widget-header">
@@ -114,15 +106,13 @@
                                         @if (@Session["count"] == null)
                                         {
 
-                                        <span class="notify"id="CartCount" >0</span>
-                                        }
-                                        else
-                                        {
-                                       <span class="notify"id="CartCount" >@Session["count"]</span>
-
-                                        }
+                                            <span class="notify" id="CartCount">0</span> }
+                                                        else
+                                                        {
+                                                            <span class="notify" id="CartCount">@Session["count"]</span>
+                                                                        }
                                     </div>
-                                    <small class="text"> Cart </small>
+                                    <small class="text"> Giỏ hàng </small>
                                 </a>
                             </div>
                         </div> <!-- widgets-wrap.// -->
@@ -142,7 +132,7 @@
                 <div class="collapse navbar-collapse" id="main_nav">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bars text-muted mr-2"></i> Demo pages </a>
+                            <!--<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bars text-muted mr-2"></i> Demo pages </a>
                             <div class="dropdown-menu dropdown-large">
                                 <nav class="row">
                                     <div class="col-6">
@@ -167,23 +157,23 @@
                                         <a href="rtl-page-index-1.html">RTL home page</a>
                                         <a href="page-components.html" target="_blank">More components</a>
                                     </div>
-                                </nav> <!--  row end .// -->
-                            </div> <!--  dropdown-menu dropdown-large end.// -->
+                                </nav>--> <!--  row end .// -->
+                            <!--</div>--> <!--  dropdown-menu dropdown-large end.// -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ready to ship</a>
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Trang chủ</a>
                         </li>
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link" href="#">Trade shows</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Services</a>
-                        </li>
+                        </li>*@
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Index","Category")">Tất cả danh mục sảm phẩm</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ml-md-auto">
+                    @*<ul class="navbar-nav ml-md-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Get the app</a>
                         </li>
@@ -196,7 +186,7 @@
                                 <a class="dropdown-item" href="#">Chinese</a>
                             </div>
                         </li>
-                    </ul>
+                    </ul>*@
                 </div> <!-- collapse .// -->
             </div> <!-- container .// -->
         </nav>

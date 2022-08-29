@@ -7,7 +7,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Tất cả thương hiệu</h2>
 <style>
     .pagination {
         display: inline-block;
@@ -176,7 +176,7 @@
             background-color: #ffffff;
         }
 </style>
-<a href="@Url.Action("Create","Band")" class="btn btn-ms btn-primary ">  <i class="fas fa-plus"></i>Thêm</a>
+<a href="@Url.Action("Create","Brand")" class="btn btn-ms btn-primary ">  <i class="fas fa-plus"></i>Thêm</a>
 
 @using (Html.BeginForm("Index", "Band", FormMethod.Get))
 {
@@ -242,9 +242,9 @@
                     @Html.DisplayFor(modelItem => item.Deleted)
                 </td>*@
         <td>
-            <a href="@Url.Action("Edit","Band",new { id = item.Id })" class="btn btn-ms btn-primary "> <i class="fas fa-edit text-white"></i></a>
-            <a href="@Url.Action("Details","Band",new { id = item.Id })" class="btn btn-ms btn-primary "> <i class="fas fa-eye text-white"></i></a>
-            <a href="@Url.Action("Delete","Band",new { id = item.Id })" class="btn btn-ms btn-primary "> <i class="fas fa-trash-alt text-white"></i></a>
+            <a href="@Url.Action("Edit","Brand",new { id = item.Id })" class="btn btn-ms btn-primary "> <i class="fas fa-edit text-white"></i></a>
+            <a href="@Url.Action("Details","Brand",new { id = item.Id })" class="btn btn-ms btn-warning "> <i class="fas fa-eye text-white"></i></a>
+            <a href="@Url.Action("Delete","Brand",new { id = item.Id })" class="btn btn-ms btn-danger "> <i class="fas fa-trash-alt text-white"></i></a>
         </td>
         </tr>
     }

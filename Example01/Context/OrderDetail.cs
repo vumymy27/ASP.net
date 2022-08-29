@@ -15,8 +15,8 @@ namespace Example01.Context
     public partial class OrderDetail
     {
         public int Id { get; set; }
-        public Nullable<int> OrderId { get; set; }
-        public Nullable<int> ProductId { get; set; }
-        public Nullable<int> Quatity { get; set; }
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
     }
 }

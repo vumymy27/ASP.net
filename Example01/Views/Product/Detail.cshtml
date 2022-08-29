@@ -33,16 +33,7 @@
     });
 </script>
 
-            <section class="py-3 bg-light">
-                <div class="container">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Category name</a></li>
-                        <li class="breadcrumb-item"><a href="#">Sub category</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Items</li>
-                    </ol>
-                </div>
-            </section>
+            
 
             <!-- ========================= SECTION CONTENT ========================= -->
             <section class="section-content bg-white padding-y">
@@ -56,13 +47,7 @@
                                     <div class="img-big-wrap">
                                         <div> <a href="#"><img src="~/content/images/items/@Model.Avatar"></a></div>
                                     </div> <!-- slider-product.// -->
-                                    <div class="thumbs-wrap">
-
-                                        <a href="#" class="item-thumb"> <img src="~/content/images/items/15.jpg"></a>
-                                        <a href="#" class="item-thumb"> <img src="~/content/images/items/15-1.jpg"></a>
-                                        <a href="#" class="item-thumb"> <img src="~/content/images/items/15-2.jpg"></a>
-                                        <a href="#" class="item-thumb"> <img src="~/content/images/items/15-1.jpg"></a>
-                                    </div> <!-- slider-nav.// -->
+                                   
                                 </article> <!-- gallery-wrap .end// -->
                             </div> <!-- card.// -->
                         </aside>
@@ -142,8 +127,8 @@
                 <div class="container">
 
                     <div class="row">
+                    <h2>Mô tả đầy đủ</h2>
                         <div class="col-md-8">
-                            <h5 class="title-description">Description</h5>
                             @Html.Raw(Model.FullDescription)
                         </div> <!-- col.// -->
 

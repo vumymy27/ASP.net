@@ -45,34 +45,11 @@ namespace Example01.Areas.Admin.Controllers
             lstUser = lstUser.OrderByDescending(n => n.Id).ToList();
             return View(lstUser.ToPagedList(pageNumber, pageSize));
         }
-        void LoadData()
-        {
-            Common objCommon = new Common();
-            var lstUser = objqlbhEntities.Users.ToList();
-            ListtoDataTableConverter converter = new ListtoDataTableConverter();
-            DataTable dtUser = converter.ToDataTable(lstUser);
-            ViewBag.ListUser = objCommon.ToSelectList(dtUser, "Id", "IsAdmin");
-
-
-            List<UserType> lstUserType = new List<UserType>();
-            UserType objUserType = new UserType();
-            objUserType.Id = 1;
-            objUserType.IsAdmin = "Admin";
-            lstUserType.Add(objUserType);
-
-            objUserType = new UserType();
-            objUserType.Id = 2;
-            objUserType.IsAdmin = "Khách hàng";
-            lstUserType.Add(objUserType);
-
-            DataTable dtUserType = converter.ToDataTable(lstUserType);
-            ViewBag.UserType = objCommon.ToSelectList(dtUserType, "Id", "IsAdmin");
-
-        }
+       
         [HttpGet]
         public ActionResult Create()
         {
-            this.LoadData();
+           
             return View();
         }
         [HttpPost]
@@ -132,7 +109,7 @@ namespace Example01.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            this.LoadData();
+            
 
             var User = objqlbhEntities.Users.Where(n => n.Id == id).FirstOrDefault();
             return View(User);

@@ -97,6 +97,10 @@ namespace Example01.Controllers
             Session.Clear();//remove session
             return RedirectToAction("Login");
         }
+        public ActionResult Search()
+        {
+            return View();
+        }
         //create a string MD5
         public static string GetMD5(string str)
         {
@@ -112,5 +116,7 @@ namespace Example01.Controllers
             }
             return byte2String;
         }
+
+      
     }
 }

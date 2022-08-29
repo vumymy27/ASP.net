@@ -14,6 +14,7 @@ namespace Example01.Models
         public int UserId { get; set; }
         [Display(Name = "Trạng thái")]
         public int Status { get; set; }
+        [Display(Name = "Ngày tạo")]
 
         public System.DateTime CreatedOnUtc { get; set; }
     }

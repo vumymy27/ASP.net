@@ -6,7 +6,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Tất cả người dùng</h2>
 <style>
     .pagination {
         display: inline-block;
@@ -198,9 +198,9 @@
         <th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().Password)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().IsAdmin)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().IsAdmin)
+            </th>*@
         <th></th>
     </tr>
 
@@ -219,13 +219,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Password)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsAdmin)
-            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.IsAdmin)
+                </td>*@
             <td>
                 <a href="@Url.Action("Edit","User",new { id = item.Id })" class="btn btn-ms btn-primary "> <i class="fas fa-edit text-white"></i></a>
-                <a href="@Url.Action("Details","User",new { id = item.Id })" class="btn btn-ms btn-primary "> <i class="fas fa-eye text-white"></i></a>
-                <a href="@Url.Action("Delete","User",new { id = item.Id })" class="btn btn-ms btn-primary "> <i class="fas fa-trash-alt text-white"></i></a>
+                <a href="@Url.Action("Details","User",new { id = item.Id })" class="btn btn-ms btn-warning "> <i class="fas fa-eye text-white"></i></a>
+                <a href="@Url.Action("Delete","User",new { id = item.Id })" class="btn btn-ms btn-danger "> <i class="fas fa-trash-alt text-white"></i></a>
             </td>
         </tr>
     }

@@ -24,6 +24,7 @@ namespace Example01.Context
 
         public System.Web.HttpPostedFileBase ImageUpload { get; set; }
     }
+    [MetadataType(typeof(BrandMasterData))]
     public partial class Brand
     {
         [NotMapped]
